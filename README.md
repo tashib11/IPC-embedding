@@ -60,10 +60,10 @@ flowchart TD
     M2 -.-> C2
     C4 -.-> M1
 
-    %% color classes
-    classDef producer fill:#ffebe6,stroke:#c94a2a,stroke-width:1px;
-    classDef memory fill:#fff5cc,stroke:#b38f00,stroke-width:1px;
-    classDef consumer fill:#e6fff0,stroke:#1a8a4a,stroke-width:1px;
+    %% color classes (blue background, black text)
+    classDef producer fill:#b3d1ff,stroke:#2b6ea3,stroke-width:1px,color:#000000;
+    classDef memory fill:#b3d1ff,stroke:#2b6ea3,stroke-width:1px,color:#000000;
+    classDef consumer fill:#b3d1ff,stroke:#2b6ea3,stroke-width:1px,color:#000000;
 
     class P1,P2,P3,P4,P5,P6 producer;
     class M1,M2 memory;
