@@ -31,6 +31,7 @@ The system uses a flag byte plus raw image bytes in shared memory.
 ## Architecture
 
 ```mermaid
+%%{init: {"themeVariables": {"diagramBackground": "#f4f6f8"}}}%%
 flowchart TD
     subgraph PRODUCER ["C PRODUCER"]
         P1["Capture Image/Webcam"] --> P2["YOLOv5 (ONNX) Inference"]
