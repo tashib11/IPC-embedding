@@ -33,23 +33,23 @@ The system uses a flag byte plus raw image bytes in shared memory.
 ```mermaid
 flowchart TD
     subgraph PRODUCER ["C PRODUCER"]
-        P1[Capture Image/Webcam] --> P2[YOLOv5 (ONNX) Inference]
-        P2 --> P3[Draw Bounding Boxes]
-        P3 --> P4{Flag == 0}
-        P4 -->|Yes| P5[Write Frame to Shared Memory]
-        P5 --> P6[Set Flag = 1]
+        P1["Capture Image/Webcam"] --> P2["YOLOv5 (ONNX) Inference"]
+        P2 --> P3["Draw Bounding Boxes"]
+        P3 --> P4{"Flag == 0"}
+        P4 -->|Yes| P5["Write Frame to Shared Memory"]
+        P5 --> P6["Set Flag = 1"]
         P6 --> P1
     end
 
     subgraph MEMORY ["SHARED MEMORY"]
-        M1[Flag Byte]
-        M2[Image Data]
+        M1["Flag Byte"]
+        M2["Image Data"]
     end
 
     subgraph CONSUMER ["PYTHON CONSUMER"]
-        C1{Flag == 1} -->|Yes| C2[Read Frame]
-        C2 --> C3[Display Window]
-        C3 --> C4[Set Flag = 0]
+        C1{"Flag == 1"} -->|Yes| C2["Read Frame"]
+        C2 --> C3["Display Window"]
+        C3 --> C4["Set Flag = 0"]
         C4 --> C1
     end
 
