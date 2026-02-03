@@ -58,6 +58,15 @@ flowchart TD
     M1 -.-> C1
     M2 -.-> C2
     C4 -.-> M1
+
+    %% color classes
+    classDef producer fill:#ffebe6,stroke:#c94a2a,stroke-width:1px;
+    classDef memory fill:#fff5cc,stroke:#b38f00,stroke-width:1px;
+    classDef consumer fill:#e6fff0,stroke:#1a8a4a,stroke-width:1px;
+
+    class P1,P2,P3,P4,P5,P6 producer;
+    class M1,M2 memory;
+    class C1,C2,C3,C4 consumer;
 ```
 
 ## Quick Start (Windows)
